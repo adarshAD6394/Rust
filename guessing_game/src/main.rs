@@ -19,7 +19,7 @@ fn main() {
             Ok(num) => num,
             Err(_) => {
                 println!("Please Enter a Valid number");
-                continue;
+                continue; 
             }
         };
         match guess.cmp(&secret_num) {
