@@ -10,15 +10,20 @@ fn main(){
 }
 
 fn couting_bits(n:i32)->Vec<i32> {
-    let mut arr:Vec<i32> = Vec::new();
-    for i in 0..n{
-        let mut count = 0;
-        for j in 0..32 {
-            if (i>>j) & 1 == 1 {
-                count += 1;
-            }
-        }
-        arr.push(count);
+    // let mut arr:Vec<i32> = Vec::new();
+    // for i in 0..n{
+    //     let mut count = 0;
+    //     for j in 0..32 {
+    //         if (i>>j) & 1 == 1 {
+    //             count += 1;
+    //         }
+    //     }
+    //     arr.push(count);
+    // }
+    // return arr;
+    let mut arr:Vec<i32> = vec![0; (n+1) as usize];
+    for i in 0..n as usize{
+        arr[i] = arr[i>>1] + (i&1) as i32;
     }
     return arr;
 }
